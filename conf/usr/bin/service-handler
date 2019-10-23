@@ -2,6 +2,7 @@
 NAME=$1
 EXEC=$2
 WAIT=$3
+
 while [ ! -f "/tmp/container.init.start" ];
 do 
         sleep 0.2
@@ -16,7 +17,8 @@ then
     if [ "$(cat $WAIT)" != "0" ];
     then 
         echo "[ Fail       ] - $NAME"
-        pkill -u root
+        kill -TERM $(ps -o pid=1)
+
     fi
 fi
 
@@ -27,7 +29,7 @@ then
     RETRY=0
     while [ 1 -eq 1 ];
     do
-        if [ $RETRY -lt 10 ];
+        if [ $RETRY -lt 5 ];
         then
             RETRY=$(($RETRY + 1))
             eval $EXEC
@@ -38,9 +40,10 @@ then
         fi
     done
     echo "[ Fail       ] - $NAME"
-    pkill -u root
+    kill -TERM $(ps -o pid=1)
+
 else
     eval $EXEC
     echo "[ Restarting ] - $NAME"
 fi
-
+ 

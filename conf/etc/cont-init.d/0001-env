@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+
+echo "http_proxy=$http_proxy" >> /etc/profile.d/environment
+echo "ftp_proxy=$ftp_proxy" >> /etc/profile.d/environment
+echo "https_proxy=$https_proxy" >> /etc/profile.d/environment
+echo "all_proxy=$all_proxy" >> /etc/profile.d/environment
+echo "HTTP_PROXY=$HTTP_PROXY" >> /etc/profile.d/environment
+echo "FTP_PROXY=$FTP_PROXY" >> /etc/profile.d/environment
+echo "HTTPS_PROXY=$HTTPS_PROXY" >> /etc/profile.d/environment
+echo "ALL_PROXY=$ALL_PROXY" >> /etc/profile.d/environment
