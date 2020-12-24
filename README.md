@@ -1,6 +1,6 @@
 ![docker build automated](https://img.shields.io/docker/cloud/automated/dotriver/alpine-s6)
 ![docker build status](https://img.shields.io/docker/cloud/build/dotriver/alpine-s6)
-![docker build status](https://img.shields.io/docker/cloud/pulls/dotriver/alpine-s6)
+![docker build status](https://img.shields.io/docker/pulls/dotriver/alpine-s6)
 
 # Alpine + Overlay S6
 
